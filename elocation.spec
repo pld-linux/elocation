@@ -8,7 +8,7 @@ Summary(pl.UTF-8):	Biblioteka lokalizacji dla środowiska Enlightenment
 Name:		elocation
 Version:	0.1.0
 %define	snap	20130813
-Release:	0.%{snap}.1
+Release:	0.%{snap}.2
 License:	unknown
 Group:		Libraries
 # git clone http://git.enlightenment.org/devs/stefan/elocation.git
