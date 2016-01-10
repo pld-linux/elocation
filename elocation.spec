@@ -2,13 +2,14 @@
 # Conditional build:
 %bcond_without	apidocs		# API docs
 %bcond_without	static_libs	# static library
-#
+
+%define	snap	20130813
+%define	rel		3
 Summary:	Enlightenment location library
 Summary(pl.UTF-8):	Biblioteka lokalizacji dla środowiska Enlightenment
 Name:		elocation
 Version:	0.1.0
-%define	snap	20130813
-Release:	0.%{snap}.2
+Release:	0.%{snap}.%{rel}
 License:	unknown
 Group:		Libraries
 # git clone http://git.enlightenment.org/devs/stefan/elocation.git
@@ -17,9 +18,9 @@ Source0:	%{name}.tar.xz
 URL:		http://git.enlightenment.org/devs/stefan/elocation.git/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1.6
+%{?with_apidocs:BuildRequires:	doxygen}
 BuildRequires:	ecore-devel
 BuildRequires:	eldbus-devel
-%{?with_apidocs:BuildRequires:	doxygen}
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.22
 BuildRequires:	tar >= 1:1.22
@@ -65,6 +66,9 @@ Statyczna biblioteka Elocation.
 Summary:	API documentation for Elocation library
 Summary(pl.UTF-8):	Dokumentacja API biblioteki Elocation
 Group:		Documentation
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 API documentation for Elocation library.
