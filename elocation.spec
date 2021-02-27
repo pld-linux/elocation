@@ -66,9 +66,7 @@ Statyczna biblioteka Elocation.
 Summary:	API documentation for Elocation library
 Summary(pl.UTF-8):	Dokumentacja API biblioteki Elocation
 Group:		Documentation
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description apidocs
 API documentation for Elocation library.
